@@ -23,7 +23,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 const showDialog = () => {
     const modal = document.createElement('div');
     modal.setAttribute("id", "breezClickOnceModal");
-    modal.style.cssText = "position: fixed; z-index:2147483647; left:0; top:0; width:100%; height:100%; overflow:auto; background-color:rgb(0,0,0); background-color:rgba(0,0,0,0.4); user-select:none;";
+    modal.style.cssText = "position: fixed; z-index:2147483647; left:0; top:0; width:100%; height:100%; overflow:auto; background-color:rgb(0,0,0); background-color:rgba(0,0,0,0.4); user-select:none; color:#303030;";
 
     const modalContent = document.createElement('div');
     modalContent.style.cssText = "background-color: #fefefe; margin: 15% auto; padding: 20px; border: 1px solid #888; width: 80%;";

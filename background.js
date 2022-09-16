@@ -9,8 +9,11 @@ const doWork = (downloadItem) => {
     //console.log(downloadItem);
     const regexPattern = /https?:\/\/([^/]+\/)+[^/]+\.application(\?.*)?/;
     if(downloadItem.state === "in_progress" && downloadItem.mime === "application/x-ms-application" && regexPattern.test(downloadItem.url)){
-        chrome.downloads.cancel(downloadItem.id);
-        canceledDownloadIds.push(downloadItem.id);
+        try{
+            canceledDownloadIds.push(downloadItem.id);
+            chrome.downloads.cancel(downloadItem.id);
+        }
+        catch{}
         chrome.runtime.sendNativeMessage('breez.clickonce.clickoncehelper', { url: downloadItem.url })
         .catch(err => {
             //console.log(err);
