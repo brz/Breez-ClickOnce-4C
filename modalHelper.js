@@ -1,0 +1,1 @@
+const closeBreezClickOnceModal = () => document.getElementById("breezClickOnceModal").remove()
